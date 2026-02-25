@@ -5,7 +5,7 @@ WORKDIR /app
 
 # Copiar dependencias primero (cacheo de capas)
 COPY package*.json ./
-RUN npm ci --only=production && npm cache clean --force
+RUN npm install --only=production && npm cache clean --force
 
 # Copiar código
 COPY . .
